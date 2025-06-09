@@ -1,5 +1,5 @@
 body {
-  background-color: #ffcce6 !important;
+  background-color: #ffb3d9 !important;
 }
 
 .star {
@@ -16,8 +16,8 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 1000px;
-  height: 1000px;
+  width: 1980px;
+  height: 600px;
   background: white;
   border-radius: 150px 150px 0 0;
   opacity: 0.5;
