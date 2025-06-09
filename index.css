@@ -14,3 +14,35 @@ body {
   border-radius: 2px;
   background-color: white;
 }
+
+.bottom-glow {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 150px;
+  background: white;
+  border-radius: 150px 150px 0 0;
+  opacity: 0.5;
+  filter: blur(30px);
+  animation: pulse 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .3;
+    transform: translateX(-50%) scale(1);
+    }
+50% {
+opacity: .6;
+  transform: translateX(-50%) scale(1.1);
+}
+  100% {
+    opacity: .3;
+    transform: translateX(-50%) scale(1);
+  }
+}
+  
+  
