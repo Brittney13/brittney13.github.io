@@ -1,28 +1,40 @@
-function createStars(i) {
-  for (var i; i; i--) {
-    drawStars();
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+
+// Create 200 stars
+function createStars(count) {
+  for (let i = 0; i < count; i++) {
+    drawStar();
   }
 }
 
-function drawStars(){
-  var tmpStar = document.createElement('figure')
-  tmpStar.className = "star";
-  tmpStar.style.top = 100*Math.random()+'%';
-  tmpStar.style.left = 100*Math.random()+'%';
+// Draw a single star
+function drawStar() {
+  const tmpStar = document.createElement('figure');
+  tmpStar.className = 'star';
+  tmpStar.style.top = `${Math.random() * 100}%`;
+  tmpStar.style.left = `${Math.random() * 100}%`;
   document.getElementById('stars').appendChild(tmpStar);
 }
 
+// Select all stars
 function selectStars() {
-    stars = document.querySelectorAll(".star");
-  console.log(stars)
+  return document.querySelectorAll('.star');
 }
 
-function animateStars() {
-      Array.prototype.forEach.call(stars, function(el, i){
-      TweenMax.to(el, Math.random() * 0.5 + 0.5, {opacity: Math.random(), onComplete: animateStars});
+// Animate stars using GSAP
+function animateStars(stars) {
+  stars.forEach((el, i) => {
+    gsap.to(el, {
+      opacity: Math.random(),
+      duration: Math.random() * 0.5 + 0.5,
+      repeat: -1,
+      yoyo: true,
+      delay: Math.random() * 2,
     });
+  });
 }
 
+// Initialize stars
+const stars = selectStars();
 createStars(200);
-selectStars();
-animateStars();
+animateStars(stars);
