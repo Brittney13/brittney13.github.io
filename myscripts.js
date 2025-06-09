@@ -1,5 +1,3 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-
 // Create 200 stars
 function createStars(count) {
   for (let i = 0; i < count; i++) {
@@ -23,7 +21,7 @@ function selectStars() {
 
 // Animate stars using GSAP
 function animateStars(stars) {
-  stars.forEach((el, i) => {
+  stars.forEach((el) => {
     gsap.to(el, {
       opacity: Math.random(),
       duration: Math.random() * 0.5 + 0.5,
